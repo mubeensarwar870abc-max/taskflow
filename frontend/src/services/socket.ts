@@ -10,7 +10,9 @@ export const initSocket = (token: string): Socket => {
   const socketUrl =
     (import.meta.env.VITE_SOCKET_URL as string) ||
     (import.meta.env.VITE_API_URL as string) ||
-    window.location.origin;
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? window.location.origin
+      : 'https://cursor-instructional-accessing-way.trycloudflare.com');
 
   socketInstance = io(socketUrl, {
     auth: {
