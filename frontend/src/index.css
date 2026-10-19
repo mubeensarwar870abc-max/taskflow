@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800 dark:text-slate-100;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom rounded scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(109, 91, 208, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 124, 246, 0.5);
+}
+
+/* ========================================================
+   Animated Thin (1px) Gradient Borders for Row 1 & Row 3 Cards
+   Light & Dark Mode Compatible with Enhanced Color Palettes
+   ======================================================== */
+@keyframes animated-border-flow {
+  0% {
+    background-position: 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 0% 0%, 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%;
+  }
+}
+
+.card-animated-border {
+  position: relative;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: transparent !important;
+  -webkit-background-clip: padding-box, border-box !important;
+  background-clip: padding-box, border-box !important;
+  background-origin: padding-box, border-box !important;
+  background-color: transparent !important;
+  animation: animated-border-flow 5s ease-in-out infinite alternate !important;
+  transition: box-shadow 0.25s ease, transform 0.2s ease !important;
+}
+
+.card-animated-border:hover {
+  animation-duration: 2.5s !important;
+}
+
+/* Light Mode: Crisp #ffffff interior + rich vibrant 1px border & subtle glow */
+.card-border-purple {
+  background-image: 
+    linear-gradient(#ffffff, #ffffff),
+    linear-gradient(135deg, #7C3AED, #A855F7, #EC4899, #6366F1, #7C3AED) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 5px 0 rgba(124, 58, 237, 0.1);
+}
+.card-border-purple:hover {
+  box-shadow: 0 4px 18px -2px rgba(124, 58, 237, 0.22) !important;
+}
+
+.card-border-blue {
+  background-image: 
+    linear-gradient(#ffffff, #ffffff),
+    linear-gradient(135deg, #2563EB, #38BDF8, #06B6D4, #4F46E5, #2563EB) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 5px 0 rgba(37, 99, 235, 0.1);
+}
+.card-border-blue:hover {
+  box-shadow: 0 4px 18px -2px rgba(37, 99, 235, 0.22) !important;
+}
+
+.card-border-pink {
+  background-image: 
+    linear-gradient(#ffffff, #ffffff),
+    linear-gradient(135deg, #DB2777, #F43F5E, #FB7185, #A855F7, #DB2777) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 5px 0 rgba(219, 39, 119, 0.1);
+}
+.card-border-pink:hover {
+  box-shadow: 0 4px 18px -2px rgba(219, 39, 119, 0.22) !important;
+}
+
+.card-border-emerald {
+  background-image: 
+    linear-gradient(#ffffff, #ffffff),
+    linear-gradient(135deg, #059669, #10B981, #14B8A6, #34D399, #059669) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 5px 0 rgba(16, 185, 129, 0.1);
+}
+.card-border-emerald:hover {
+  box-shadow: 0 4px 18px -2px rgba(16, 185, 129, 0.22) !important;
+}
+
+/* Dark Mode: Sleek #191E35 interior + radiant luminous 1px neon border & glow */
+.dark .card-border-purple {
+  background-image: 
+    linear-gradient(#191E35, #191E35),
+    linear-gradient(135deg, #8B5CF6, #C084FC, #F43F5E, #818CF8, #8B5CF6) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 8px 0 rgba(139, 92, 246, 0.18);
+}
+.dark .card-border-purple:hover {
+  box-shadow: 0 4px 22px -2px rgba(139, 92, 246, 0.38) !important;
+}
+
+.dark .card-border-blue {
+  background-image: 
+    linear-gradient(#191E35, #191E35),
+    linear-gradient(135deg, #3B82F6, #38BDF8, #818CF8, #00F0FF, #3B82F6) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 8px 0 rgba(59, 130, 246, 0.18);
+}
+.dark .card-border-blue:hover {
+  box-shadow: 0 4px 22px -2px rgba(59, 130, 246, 0.38) !important;
+}
+
+.dark .card-border-pink {
+  background-image: 
+    linear-gradient(#191E35, #191E35),
+    linear-gradient(135deg, #EC4899, #FF2E93, #F43F5E, #E879F9, #EC4899) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 8px 0 rgba(236, 72, 153, 0.18);
+}
+.dark .card-border-pink:hover {
+  box-shadow: 0 4px 22px -2px rgba(236, 72, 153, 0.38) !important;
+}
+
+.dark .card-border-emerald {
+  background-image: 
+    linear-gradient(#191E35, #191E35),
+    linear-gradient(135deg, #10B981, #00FFB2, #2DD4BF, #34D399, #10B981) !important;
+  background-size: 100% 100%, 300% 300% !important;
+  box-shadow: 0 1px 8px 0 rgba(16, 185, 129, 0.18);
+}
+.dark .card-border-emerald:hover {
+  box-shadow: 0 4px 22px -2px rgba(16, 185, 129, 0.38) !important;
+}
+
